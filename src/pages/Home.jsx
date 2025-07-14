@@ -26,8 +26,8 @@ export default function Home() {
                 <button>This Week</button>
             </div>
         </div>
-        <div>
-          <Card/>
+        <div className='w-50 mt-20 ml-10'>
+          <Card variant='home'/>
         </div>
        </div>
     </>
