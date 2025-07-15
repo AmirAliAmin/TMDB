@@ -6,7 +6,7 @@ export default function Popular() {
   const [movie, setMovie] = useState([]);
 
   const truncateOverview = (text) => {
-    const maxLength = 40; // Adjust character limit for roughly 2 lines
+    const maxLength = 40; 
     if (!text) return "";
     return text.length > maxLength
       ? text.substring(0, maxLength) + "..."
