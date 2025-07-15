@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Seachbar from './components/Seachbar'
 import Home from './pages/Home'
@@ -10,11 +11,14 @@ function App() {
  
   return (
     <>
+
     <Navbar/>
     {/* <Seachbar/> */}
-    <Home/>
-    <MoviesSection/>
-    <MoviesDetail/>
+    <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/movie' element={<MoviesSection/>}/>
+      <Route path="/movie/:id" element={<MoviesDetail />} />
+    </Routes>
     </>
   )
 }

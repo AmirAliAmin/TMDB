@@ -85,7 +85,7 @@ export default function Filter() {
       <div className="border p-3 rounded-2xl">
       <div className="flex font-medium gap-[170px]" onClick={()=>setOpen(!open)}>
         <h1>Filter</h1>
-        <div className="absolute left-[220px] text-[30px]">
+        <div className="absolute left-[200px] text-[30px]">
           <RiArrowDropDownLine />
         </div>
       </div>
