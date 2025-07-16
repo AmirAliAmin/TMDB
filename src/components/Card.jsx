@@ -21,7 +21,7 @@ export default function Card({ variant = "default" ,movie}) {
     <div  onClick={()=>MoviesDetail(movie.id)}>
       <div className='relative' >
         <img className={` mb-6 ${imageStyles[variant]}`} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-        <div  className={`absolute bg-blue-950 w-[40px] h-[40px] p-2 rounded-full text-white font-bold text-[12px] ${ratingStyles[variant]}`}>{Math.round(movie.vote_average * 10)}%</div>
+        <div  className={`absolute bg-[#081C22] w-[40px] h-[40px] p-2 rounded-full text-white font-bold text-[12px] ${ratingStyles[variant]}`}>{Math.round(movie.vote_average * 10)}%</div>
       </div>
         <h1 className='font-extrabold pl-5 overflow-hidden'>{movie.title}</h1>
         <p className='pl-5 text-gray-600'>{movie.release_date}</p>
