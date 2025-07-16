@@ -1,85 +1,33 @@
 import { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-export default function Filter() {
+export default function Filter({ selectedGenres, setSelectedGenres } ) {
     const [open , setOpen] =  useState(false)
   const Genres = [
-    {
-      id: 1,
-      title: "Action",
-    },
-    {
-      id: 2,
-      title: "Adventure",
-    },
-    {
-      id: 3,
-      title: "Animation",
-    },
-    {
-      id: 4,
-      title: "Comedy",
-    },
-    {
-      id: 5,
-      title: "Crime",
-    },
-    {
-      id: 6,
-      title: "Documentary",
-    },
-    {
-      id: 7,
-      title: "Drama",
-    },
-    {
-      id: 8,
-      title: "Family",
-    },
-    {
-      id: 9,
-      title: "Fantasy",
-    },
-    {
-      id: 10,
-      title: "History",
-    },
-    {
-      id: 11,
-      title: "Horror",
-    },
-    {
-      id: 12,
-      title: "Music",
-    },
-    {
-      id: 13,
-      title: "Mystery",
-    },
-    {
-      id: 14,
-      title: "Romance",
-    },
-    {
-      id: 15,
-      title: "Science Fiction",
-    },
-    {
-      id: 16,
-      title: "Tv Movie",
-    },
-    {
-      id: 17,
-      title: "Thriller",
-    },
-    {
-      id: 18,
-      title: "War",
-    },
-    {
-      id: 19,
-      title: "West",
-    },
+     { id: 28, title: "Action" },
+    { id: 12, title: "Adventure" },
+    { id: 16, title: "Animation" },
+    { id: 35, title: "Comedy" },
+    { id: 80, title: "Crime" },
+    { id: 99, title: "Documentary" },
+    { id: 18, title: "Drama" },
+    { id: 10751, title: "Family" },
+    { id: 14, title: "Fantasy" },
+    { id: 36, title: "History" },
+    { id: 27, title: "Horror" },
+    { id: 10402, title: "Music" },
+    { id: 9648, title: "Mystery" },
+    { id: 10749, title: "Romance" },
+    { id: 878, title: "Science Fiction" },
+    { id: 10770, title: "TV Movie" },
+    { id: 53, title: "Thriller" },
+    { id: 10752, title: "War" },
+    { id: 37, title: "Western" },
   ];
+   const toggleGenre = (id) => {
+    setSelectedGenres((prev) =>
+      prev.includes(id) ? prev.filter((g) => g !== id) : [...prev, id]
+    );
+  };
   return (
     <>
       <div className="border p-3 rounded-2xl">
@@ -110,9 +58,17 @@ export default function Filter() {
       <div className="mt-5">
         <h1 className="">Genres</h1>
         <div className="flex flex-wrap gap-5 mt-2">
-        {Genres.map((genres) =>( 
-            <button key={genres.id} className="border p-1 rounded-3xl">{genres.title}</button>
-        ))}
+       {Genres.map((genre) => (
+              <button
+                key={genre.id}
+                className={`border px-3 py-1 rounded-3xl ${
+                  selectedGenres.includes(genre.id) ? "bg-blue-800 text-white" : ""
+                }`}
+                onClick={() => toggleGenre(genre.id)}
+              >
+                {genre.title}
+              </button>
+            ))}
       </div>
       </div>
       </div>
