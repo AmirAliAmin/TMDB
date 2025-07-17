@@ -44,7 +44,7 @@ export default function Popular({ selectedGenres, searchTriggered, setSearchTrig
   return (
     <div className="w-[100%] sm:w-[80%] gap-5 m-5 flex flex-wrap sm:mt-10">
       {filteredMovie.map((item) => (
-        <div key={item.id} className="w-[100%] hidden lg:block sm:w-[18%] border rounded-2xl">
+        <div key={item.id} className="w-[100%] h-90 hidden lg:block sm:w-[18%] border rounded-2xl">
           <Card movie={item} variant="popular" />
         </div>
       ))}
