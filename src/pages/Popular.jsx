@@ -2,20 +2,21 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import { useNavigate } from "react-router-dom";
 
-export default function Popular({ selectedGenres, searchTriggered, setSearchTriggered }) {
+export default function Popular({ selectedGenres, searchTriggered, setSearchTriggered , selectedSort}) {
   const [movie, setMovie] = useState([]);
   const [filteredMovie, setFilteredMovie] = useState([]);
 
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=e824bfa11798d99cd1daa91c27d431d1"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setMovie(data.results);
-        setFilteredMovie(data.results);
-      });
-  }, []);
+ useEffect(() => {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=e824bfa11798d99cd1daa91c27d431d1&sort_by=${selectedSort}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      setMovie(data.results);
+      setFilteredMovie(data.results);
+    });
+}, [selectedSort]);
+
 
   useEffect(() => {
     if (searchTriggered) {
