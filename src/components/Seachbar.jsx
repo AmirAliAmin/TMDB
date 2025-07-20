@@ -7,6 +7,7 @@ export default function Seachbar() {
         <input className='px-5 w-[95%] h-[40px] focus:outline-none' type="text"  placeholder="Sreach for a movie,tv show,person"/>
         <div className="mt-3">
           <FaSearch />
+          
         </div>
      </div>
       
